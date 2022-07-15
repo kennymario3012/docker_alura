@@ -1,5 +1,9 @@
 FROM node
 WORKDIR /app_mode
 COPY . .
+ARG PORT_BUILD=3000
+ENV PORT=$PORT_BUILD
+EXPOSE $PORT_BUILD
 RUN npm install -g npm@8.14.0
+RUN npm install
 ENTRYPOINT npm start
